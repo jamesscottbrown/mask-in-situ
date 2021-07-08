@@ -71,12 +71,12 @@ An alternative is not store secrets in any config files, and instead load them f
 This provides advantages like auditing and the ability to more easily rotate credentials, but requires additional infrastructure.
 
 
-### Tool-spcific approaches
+### Tool-specific approaches
 
 These typically involving extracting secrets from a config to a separate encrypted file that is then imported.
 
-[Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
-[Docker-compose secrets](https://docs.docker.com/compose/compose-file/compose-file-v3/#secrets)/[Docker swarm secrets](https://docs.docker.com/engine/swarm/secrets/)
-[kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+* [Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
+* [Docker-compose secrets](https://docs.docker.com/compose/compose-file/compose-file-v3/#secrets)/[Docker swarm secrets](https://docs.docker.com/engine/swarm/secrets/)
+* [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 ...
 
