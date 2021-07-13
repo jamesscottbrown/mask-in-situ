@@ -64,11 +64,11 @@ In particular, whenever any change is made, it must be manually made to both the
 An alternative is not store secrets in any config files, and instead load them from a centralised store provided by a system like:
 
 * [HashiCorp Vault](https://www.vaultproject.io/)
-* [Keywhiz](https://square.github.io/keywhiz/)
+* Square's [Keywhiz](https://square.github.io/keywhiz/)
 * [Akeyless Vault](https://www.akeyless.io/)
 * [Thycotic Secret Server](https://thycotic.com/products/secret-server/)
 * [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
-* [Red October](https://github.com/cloudflare/redoctober) ([announcement blog post](https://blog.cloudflare.com/red-october-cloudflares-open-source-implementation-of-the-two-man-rule/))
+* CloudFlare's [Red October](https://github.com/cloudflare/redoctober) ([announcement blog post](https://blog.cloudflare.com/red-october-cloudflares-open-source-implementation-of-the-two-man-rule/))
 
 This provides advantages like auditing and the ability to more easily rotate credentials, but requires additional infrastructure.
 
