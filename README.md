@@ -1,6 +1,6 @@
 # Mask in situ
 
-Mask in situ (`maskis`) makes it easy to encrypt only specific sections of files (for example, secrets such as password in configuration files).
+Mask in situ makes it easy to encrypt only specific sections of files (for example, secrets such as password in configuration files).
 
 The intended use is to allow config files to be shared in a partially-encrypted form, so that secrets are protected but the overall structure of the file, and the value of non-sensitive options are visible.
 
@@ -80,7 +80,7 @@ These typically involving extracting secrets from a config to a separate encrypt
 * [Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 * [Chef encrypted data bags](https://docs.chef.io/data_bags/#encrypt-a-data-bag-item)
 * [Docker-compose secrets](https://docs.docker.com/compose/compose-file/compose-file-v3/#secrets)/[Docker swarm secrets](https://docs.docker.com/engine/swarm/secrets/)
-* [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
-* * [Puoooe hiiera-eyaml](https://puppet.com/blog/encrypt-your-data-using-hiera-eyaml/)
+* [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/) (and [sealed secrets](https://github.com/bitnami-labs/sealed-secrets))
+* [Puppet hiera-eyaml](https://puppet.com/blog/encrypt-your-data-using-hiera-eyaml/)
 ...
 
