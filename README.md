@@ -6,13 +6,13 @@ The intended use is to allow config files to be shared in a partially-encrypted 
 
 ## Usage
 
-If you have a config file that contains secrets, indicate the values to be encrypted by enclosing them in `%MASK{..}`, then run the `encrypt1` command:
+If you have a config file that contains secrets, indicate the values to be encrypted by enclosing them in `%MASK{..}`, then run the `encrypt` command:
 
-You cna generate a key using the `generate-key` subcommand.
+You can generate a key using the `generate-key` subcommand.
 
 ...
 
-You can provide the name of an environment variable containing the key as an option; if you do not, you will be prompted for a he key interactively.
+You can provide the name of an environment variable containing the key as an option; if you do not, you will be prompted for the key interactively.
 
 
 ## Alternatives
@@ -64,9 +64,11 @@ In particular, whenever any change is made, it must be manually made to both the
 An alternative is not store secrets in any config files, and instead load them from a centralised store provided by a system like:
 
 * [HashiCorp Vault](https://www.vaultproject.io/)
+* [Keywhiz](https://square.github.io/keywhiz/)
 * [Akeyless Vault](https://www.akeyless.io/)
 * [Thycotic Secret Server](https://thycotic.com/products/secret-server/)
 * [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+* [Red October](https://github.com/cloudflare/redoctober) ([announcement blog post](https://blog.cloudflare.com/red-october-cloudflares-open-source-implementation-of-the-two-man-rule/))
 
 This provides advantages like auditing and the ability to more easily rotate credentials, but requires additional infrastructure.
 
@@ -76,7 +78,9 @@ This provides advantages like auditing and the ability to more easily rotate cre
 These typically involving extracting secrets from a config to a separate encrypted file that is then imported.
 
 * [Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
+* [Chef encrypted data bags](https://docs.chef.io/data_bags/#encrypt-a-data-bag-item)
 * [Docker-compose secrets](https://docs.docker.com/compose/compose-file/compose-file-v3/#secrets)/[Docker swarm secrets](https://docs.docker.com/engine/swarm/secrets/)
 * [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+* * [Puoooe hiiera-eyaml](https://puppet.com/blog/encrypt-your-data-using-hiera-eyaml/)
 ...
 
