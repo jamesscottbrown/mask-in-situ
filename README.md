@@ -4,6 +4,21 @@ Mask in situ makes it easy to encrypt only specific sections of files (for examp
 
 The intended use is to allow config files to be shared in a partially-encrypted form, so that secrets are protected but the overall structure of the file, and the value of non-sensitive options are visible.
 
+
+## Installation
+
+You can install with `pip install mask-in-situ`, and then use the `mis` command (e.g., `mis generate-key`).
+
+Alternatively, you can use the Docker image: `docker run jamesscottbrown/mask-in-situ "mis generate-key"`.
+
+You can pass an environment key, and mount a directory as a volume, e.g.,
+
+```
+export CONFIG_KEY="THIS_IS_A_KEY"
+docker run --user $(id -u):$(id -g) -v $(pwd):/config -e CONFIG_KEY="$CONFIG_KEY" jamesscottbrown/mask-in-situ "mis decrypt-dir -e CONFIG_KEY /config/masked /config/unmasked"
+```
+
+
 ## Usage
 
 ![](./usage.png)
