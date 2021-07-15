@@ -6,11 +6,14 @@ The intended use is to allow config files to be shared in a partially-encrypted 
 
 ## Usage
 
-If you have a config file that contains secrets, indicate the values to be encrypted by enclosing them in `%MASK{..}`, then run the `encrypt` command:
+![](./usage.png)
+
+If you have a config file that contains secrets, indicate the values to be encrypted by enclosing them in `%MASK{..}`, then run the `encrypt` command providing the name of the input and output files as arguments.
+You can then recover the original file using the `decrypt` command.
+
+The  `encrypt-dir` and `decrypt-dir` commands act in the same way as `encrypt` and `decrypt`, but rather than transforming single files they transform every file in a directory (descending recursively into subdirectories).
 
 You can generate a key using the `generate-key` subcommand.
-
-...
 
 You can provide the name of an environment variable containing the key as an option; if you do not, you will be prompted for the key interactively.
 
