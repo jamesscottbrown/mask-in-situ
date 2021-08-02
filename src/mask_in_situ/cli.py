@@ -59,6 +59,8 @@ def encrypt_dir(env_var, indir, outdir):
 
     for root, subdirs, files in os.walk(indir):
         for file in files:
+            if file == ".DS_Store":
+                continue
             with open(os.path.join(root, file), 'r') as infile:
 
                 relpath = os.path.relpath(root, indir)
@@ -80,6 +82,8 @@ def decrypt_dir(env_var, indir, outdir):
 
     for root, subdirs, files in os.walk(indir):
         for file in files:
+            if file == ".DS_Store":
+                continue
             with open(os.path.join(root, file), 'r') as infile:
                 relpath = os.path.relpath(root, indir)
                 os.makedirs(os.path.join(outdir, relpath), exist_ok=True)

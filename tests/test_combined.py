@@ -63,10 +63,19 @@ def test_directory_roundtrip():
         os.path.join('foo', 'bar', '4.txt'),
     ]
 
+    files_to_exclude = [
+        os.path.join('foo', '.DS_Store')
+    ]
+
     for file in files:
         file_to_mask = os.path.join(dir_to_mask, file)
         with open(file_to_mask, 'w') as fp:
             fp.write(to_mask)
+
+    for file in files_to_exclude:
+        file_to_mask = os.path.join(dir_to_mask, file)
+        with open(file_to_mask, 'w') as fp:
+            fp.write(" ")
 
     os.environ['TEST_KEY'] = key.decode()
 
@@ -90,6 +99,11 @@ def test_directory_roundtrip():
         with open(file_masked, 'r') as fp:
             assert fp.read() != to_mask
             assert fp.read() != original
+
+    # Assert excluded files are not masked
+    for file in files_to_exclude:
+        file_masked = os.path.join(dir_masked, file)
+        assert not os.path.exists(file_masked)
 
     # Assert unmasked files are correct
     for file in files:
