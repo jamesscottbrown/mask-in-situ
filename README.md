@@ -1,3 +1,7 @@
+[![PyPI](https://img.shields.io/pypi/v/mask-in-situ)](https://pypi.org/project/mask-in-situ)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/mask-in-situ)](https://pypi.org/project/mask-in-situ)
+
+
 # Mask in situ
 
 Mask in situ makes it easy to encrypt only specific sections of files (for example, secrets such as password in configuration files).
